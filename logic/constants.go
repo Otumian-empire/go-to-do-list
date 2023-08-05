@@ -1,7 +1,7 @@
 package logic
 
 // option constants
-var (
+const (
 	ADD      = 1
 	READ     = 2
 	EDIT     = 3
@@ -11,12 +11,12 @@ var (
 )
 
 // time to wait
-var (
+const (
 	WAIT_TIME = 1 // sec
 )
 
 // error messages
-var (
-	GET_OPTION_ERROR_MESSAGE = "Enter a valid option: 1, 2, 3, 4, 5 or 12"
-	GET_INDEX_ERROR_MESSAGE  = "Enter a valid (numeric) index from the TODO List"
+const (
+	GET_OPTION_ERROR_MESSAGE = "enter a valid option: 1, 2, 3, 4, 5 or 12"
+	GET_INDEX_ERROR_MESSAGE  = "enter a valid (numeric) index from the TODO List"
 )
