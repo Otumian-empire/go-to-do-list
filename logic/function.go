@@ -4,6 +4,8 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"os/exec"
+	"runtime"
 	"time"
 )
 
@@ -55,4 +57,19 @@ func CatchError() {
 
 func WaitForASec() {
 	time.Sleep(time.Second * time.Duration(WAIT_TIME))
+}
+
+func ClearScreen() {
+	switch runtime.GOOS {
+	case "windows":
+		cmd := exec.Command("cmd", "/c", "cls")
+		cmd.Stdout = os.Stdout
+		cmd.Run()
+	case "linux", "darwin":
+		cmd := exec.Command("clear")
+		cmd.Stdout = os.Stdout
+		cmd.Run()
+	default:
+		fmt.Println("Unsupported operating system")
+	}
 }
